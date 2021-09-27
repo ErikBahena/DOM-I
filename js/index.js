@@ -127,3 +127,17 @@ contactSection.querySelector("p:nth-of-type(3)").textContent =
 
 const footer = document.querySelector("footer")
 footer.textContent = siteContent.footer.copyright;
+
+// add new content tasks
+const navLinks = document.querySelectorAll("nav a")
+navLinks.forEach(el => el.style.color = "green");
+
+const help = document.createElement("a")
+help.textContent = "Help"
+const info = document.createElement("a")
+info.textContent = "Info"
+nav.appendChild(help);
+nav.prepend(info)
+
+// Using button to toggle background color
+document.querySelector("button").addEventListener("click", function(){document.body.classList.toggle("lightBlue")})
