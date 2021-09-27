@@ -49,32 +49,81 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 // nav links content
 const nav = document.querySelector("nav");
 const navLinksArr = [...nav.children];
-const navContentArr = Object.values(siteContent.nav).slice(0, navLinksArr.length)
+const navContentArr = Object.values(siteContent.nav).slice(
+  0,
+  navLinksArr.length
+);
 
-navLinksArr.forEach((link, i) => link.textContent = navContentArr[i]);
+navLinksArr.forEach((link, i) => (link.textContent = navContentArr[i]));
 
 // Cta section
-const ctaSection = document.querySelector(".cta")
+const ctaSection = document.querySelector(".cta");
 
 ctaSection.querySelector("h1").textContent = siteContent.cta.h1;
 
-ctaSection.querySelector("button").textContent = siteContent.cta.button
+ctaSection.querySelector("button").textContent = siteContent.cta.button;
 
 ctaSection.querySelector("img").src = siteContent.cta["img-src"];
 
-// Main content 
-const topContentFeatures = document.querySelector(".text-content:nth-of-type(1)");
+// Main content
+// Top
+const topContentFeatures = document.querySelector(
+  ".text-content:nth-of-type(1)"
+);
+topContentFeatures.querySelector("h4").textContent =
+  siteContent["main-content"]["features-h4"];
+topContentFeatures.querySelector("p").textContent =
+  siteContent["main-content"]["features-content"];
+
 const topContentAbout = document.querySelector(".text-content:nth-of-type(2)");
+topContentAbout.querySelector("h4").textContent =
+  siteContent["main-content"]["about-h4"];
+topContentAbout.querySelector("p").textContent =
+  siteContent["main-content"]["about-content"];
+// main content image
 
-topContentFeatures.querySelector("h4").textContent = siteContent["main-content"]["features-h4"]
-topContentAbout.querySelector("h4").textContent = siteContent["main-content"]["about-h4"]
+const mainImg = document.querySelector(".main-content img");
+mainImg.src = siteContent["main-content"]["middle-img-src"];
 
+// main content bottom
+const bottomContentServices = document.querySelector(
+  ".bottom-content .text-content:nth-of-type(1)"
+);
+bottomContentServices.querySelector("h4").textContent =
+  siteContent["main-content"]["services-h4"];
 
+bottomContentServices.querySelector("p").textContent =
+  siteContent["main-content"]["services-content"];
 
-const bottomContentServices = document.querySelector(".bottom-content .text-content:nth-of-type(1)");
-const bottomContentProduct = document.querySelector(".bottom-content .text-content:nth-of-type(2)");
-const bottomContentVision = document.querySelector(".bottom-content .text-content:nth-of-type(3)");
+const bottomContentProduct = document.querySelector(
+  ".bottom-content .text-content:nth-of-type(2)"
+);
+bottomContentProduct.querySelector("h4").textContent =
+  siteContent["main-content"]["product-h4"];
+bottomContentProduct.querySelector("p").textContent =
+  siteContent["main-content"]["product-content"];
 
-bottomContentServices.querySelector("h4").textContent = siteContent["main-content"]["services-h4"]
-bottomContent.querySelector("h4").textContent = siteContent["main-content"]["services-h4"]
-bottomContentServices.querySelector("h4").textContent = siteContent["main-content"]["services-h4"]
+const bottomContentVision = document.querySelector(
+  ".bottom-content .text-content:nth-of-type(3)"
+);
+bottomContentVision.querySelector("h4").textContent =
+  siteContent["main-content"]["vision-h4"];
+bottomContentVision.querySelector("p").textContent =
+  siteContent["main-content"]["vision-content"];
+
+// contact section
+
+const contactSection = document.querySelector(".contact");
+contactSection.querySelector("h4").textContent =
+  siteContent.contact["contact-h4"];
+contactSection.querySelector("p:nth-of-type(1)").textContent =
+  siteContent.contact.address;
+contactSection.querySelector("p:nth-of-type(2)").textContent =
+  siteContent.contact.phone;
+contactSection.querySelector("p:nth-of-type(3)").textContent =
+  siteContent.contact.email;
+
+  // footer section 
+
+const footer = document.querySelector("footer")
+footer.textContent = siteContent.footer.copyright;
